@@ -1,11 +1,11 @@
 require("dotenv").config();
 const fs = require("fs");
+const inquirer = require("inquirer");
+const utils = require("./utils");
 const api = require("./utils/api");
 const questions = require("./utils/questions");
-const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
-
-// function writeToFile(functionName, data) {}
+const writeFileAsync = utils.promisify(fs.writeFile);
 
 // async function to await user input and github info
 async function init() {
@@ -15,16 +15,11 @@ async function init() {
 //   next two lines break down what const {data : gitInfo}
 //   const data = await api.getUser(userInfo.username);
 //   const gitInfo = data.data;
-        readme = generateMarkdown(userInput, gitInfo)
-
-//create md file with information returned from createReadme function
-        fs.writeFile("readMe.md", readme, function(err){
-            if (err){
-            return console.log(err);
-            }
-            })
-        } catch (err) {
-            return;
+        const readme = generateMarkdown(userInput, gitInfo)
+//create md file 
+        await writeFileAsync("readMe.md", readme);
+    } catch (err){
+        console.log(err);
     }
 };
 
