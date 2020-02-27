@@ -21,9 +21,11 @@ function generateMarkdown(userInput, gitInfo) {
 
   ${userInput.installation}
 
+
   ## Usage
 
   ${userInput.usage}
+
 
   ## License
 
@@ -49,5 +51,5 @@ function generateMarkdown(userInput, gitInfo) {
 
   <img src="${gitInfo.avatar_url}" alt="avatar" height="200" width="200"/>
   `;
-}
+};
 module.exports = generateMarkdown;
