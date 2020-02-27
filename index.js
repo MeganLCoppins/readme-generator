@@ -15,7 +15,13 @@ async function init() {
 //   const gitInfo = data.data;
   readme = createReadme(userInput, gitInfo)
 
-}
+//create md file with information returned from createReadme function
+  fs.writeFile("readMe.md", readme, function(err){
+      if (err){
+          return console.log(err);
+      }
+  })
+};
 
 // create readme based on user input and github info
 function createReadme(userInput, gitInfo){
@@ -57,9 +63,9 @@ function createReadme(userInput, gitInfo){
 
     ## Tests
 
-    \`\`\`
-    ${userInput.tests}
-    \`\`\`
+
+        ${userInput.tests}
+
 
     ## Questions
 
