@@ -1,11 +1,11 @@
 require("dotenv").config();
 const fs = require("fs");
 const inquirer = require("inquirer");
-const utils = require("./utils");
+const util = require("util");
 const api = require("./utils/api");
 const questions = require("./utils/questions");
 const generateMarkdown = require("./utils/generateMarkdown");
-const writeFileAsync = utils.promisify(fs.writeFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // async function to await user input and github info
 async function init() {
