@@ -2,13 +2,13 @@
 
  ## Description
 
- I created this commond-line application with the purpose of dynamially generating a good readme.md file. 
+ I created this command-line application with the purpose of dynamially generating a good readme.md file. 
  
  I created the application to be invoked with the command ```node index.js```. 
  
- Once the command is run the application prompts the user for their GitHub username and questions about their project. Using axios once the GitHub username is entered a call to the GitHub API retrieves the users email and profile image. 
+ Once the command is run the application prompts the user for their GitHub username and questions about their project. The application takes the GitHub username input and makes a call to the GitHub API to retrieve the users email and profile image. 
  
- The README takes the user input and is populated with:
+ The application takes the rest of the user input and a README is populated with:
 
  * Project Title
  * Description
