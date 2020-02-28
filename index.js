@@ -17,7 +17,7 @@ async function init() {
 //   const gitInfo = data.data;
         const readme = generateMarkdown(userInput, gitInfo)
 //create md file 
-        await writeFileAsync("readMe.md", readme);
+        await writeFileAsync("newReadMe.md", readme);
     } catch (err){
         console.log(err);
     }
